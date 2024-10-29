@@ -1,0 +1,19 @@
+.splash-carousel{
+    width: 60%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+@media (max-width: 768px) {
+    .splash-carousel{
+        width: 90%;
+    }
+}
+
+.homepage-columns{
+    justify-content: space-around;
+}
+
+.splash-cards{
+    text-align: center;
+    padding: 30px;
+}
