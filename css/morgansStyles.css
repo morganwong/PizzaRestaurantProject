@@ -17,3 +17,42 @@
     text-align: center;
     padding: 30px;
 }
+
+
+.products{
+    margin-top: 35px;
+}
+
+.product-row{
+    margin-top: 35px;
+    justify-content: space-around;
+}
+.product{
+    padding: 10px;
+}
+.size-span{
+    width: 30%;
+    display:table;
+}
+#addNewPizza_errorMessage{
+    display: none;
+    color: red;
+}
+
+
+
+/*
+Sprite not used for splash carousel, individual images work better
+*/
+.bg-spriteOne {
+    width: 1000px; height: 550px;
+    background: url('../img/css_sprites.webp') -1030px -10px;
+}
+.bg-spriteTwo {
+    width: 1000px; height: 550px;
+    background: url('../img/css_sprites.webp') -10px -580px;
+}
+.bg-spriteThree {
+    width: 1000px; height: 550px;
+    background: url('../img/css_sprites.webp') -10px -10px;
+}
