@@ -12,17 +12,16 @@
 .homepage-columns{
     justify-content: space-around;
 }
-
 .splash-cards{
     text-align: center;
     padding: 30px;
 }
 
 
+
 .products{
     margin-top: 35px;
 }
-
 .product-row{
     margin-top: 35px;
     justify-content: space-around;
@@ -30,14 +29,25 @@
 .product{
     padding: 10px;
 }
+.pizzaProduct{
+    display: none;
+}
+.pizzaProduct:hover{
+    scale: 1.02;
+}
+
+
 .size-span{
     width: 30%;
     display:table;
 }
+
+
 #addNewPizza_errorMessage{
     display: none;
     color: red;
 }
+
 
 
 
