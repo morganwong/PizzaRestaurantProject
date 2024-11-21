@@ -41,19 +41,19 @@ var products_sides = [
         name: "Garlic Bread",
         description: "Who can resist the classic?",
         price: 7.50,
-        img: ""
+        img: "img/garlicbread.webp"
     },
     {
         name: "Garlic Bread with Cheese",
         description: "The one thing that could make garlic EVEN BETTER!",
         price: 9.50,
-        img: ""
+        img: "img/garlicbread_cheese.webp"
     },
     {
         name: "Chicken Wings",
         description: "We bought these in Aldi for 2.50 and we're gonna charge you over 10 euro",
         price: 10.50,
-        img: ""
+        img: "img/chickenwings.webp"
     }
 ];
 
@@ -78,6 +78,13 @@ var products_drinks = [
     }
 ];
 
+function showProducts(){
+    let delay = 0;
+    $('.productCard').toArray().forEach(e => {
+        $(e).delay(100 * delay++).animate({opacity: 1.0})
+    });
+}
+
 function populatePizzas(){
     let i = 0;
     let pizzaContent = "";
@@ -87,10 +94,10 @@ function populatePizzas(){
         }
         // const altString = pizza.name + " pizza";
         pizzaContent += `
-            <div class="col-md-3 pizzaProduct">
-                <div class="card">
+            <div class="col-md-3 productCard">
+                <div class="card border-0">
                     <img src=${pizza.img} class="card-img-top" alt="pizza">
-                    <div class="card-body product">
+                    <div class="card-body">
                         <h5>${pizza.name}</h5>
                         <p>${pizza.description}</p>
                         <p>Sizes: ${pizza.sizes}</p>
@@ -115,8 +122,6 @@ function populatePizzas(){
     }
 
     $('#pizza').html(pizzaContent);
-
-    $('.pizzaProduct').fadeIn(400);
 }
 
 function populateSides(){
@@ -127,10 +132,10 @@ function populateSides(){
             sidesContent += `<div class="row product-row">`;
         }
         sidesContent += `
-            <div class="col-md-3">
-                <div class="card">
+            <div class="col-md-3 productCard">
+                <div class="card border-0">
                     <img src=${side.img} class="card-img-top" alt=${side.name}>
-                    <div class="card-body product">
+                    <div class="card-body">
                         <h5>${side.name}</h5>
                         <p>${side.description}</p>
                         <p><strong>Price</strong>: ${side.price}</p>
@@ -169,7 +174,7 @@ function resetAddNewPizzaValues(){
 
 populatePizzas();
 populateSides();
-
+showProducts();
 
 $('#addNewPizza_cancelButton').click(resetAddNewPizzaValues);
 $('#addNewPizza_closeButton').click(resetAddNewPizzaValues);
@@ -224,5 +229,6 @@ $('#addNewPizza_addButton').click(function(){
 
     populatePizzas();
     $('#addNewPizza_closeButton').click();
+    showProducts();
 });
 
