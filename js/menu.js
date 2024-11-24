@@ -92,11 +92,10 @@ function populatePizzas(){
         if(i % 3 === 0){
             pizzaContent += `<div class="row product-row">`;
         }
-        // const altString = pizza.name + " pizza";
         pizzaContent += `
             <div class="col-md-3 productCard">
                 <div class="card border-0">
-                    <img src=${pizza.img} class="card-img-top" alt="pizza">
+                    <img src=${pizza.img} class="card-img-top" alt="${pizza.name} pizza">
                     <div class="card-body">
                         <h5>${pizza.name}</h5>
                         <p>${pizza.description}</p>
@@ -104,6 +103,13 @@ function populatePizzas(){
                         <p><strong>Price</strong>: ${pizza.prices}</p>
                     </div>
                 </div>
+                <button 
+                    class="btn btn-light addToOrderButton" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#addToOrderModal" 
+                    onclick="addToOrder_pizza('${pizza.name}')">
+                        Add To Order
+                </button>
             </div>
         `;
         if(++i % 3 === 0){
@@ -141,6 +147,13 @@ function populateSides(){
                         <p><strong>Price</strong>: ${side.price}</p>
                     </div>
                 </div>
+                <button 
+                    class="btn btn-light addToOrderButton" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#addToOrderModal" 
+                    onclick="addToOrder_side('${side.name}')">
+                        Add To Order
+                </button>
             </div>
         `;
         if(++i % 3 === 0){
@@ -231,4 +244,105 @@ $('#addNewPizza_addButton').click(function(){
     $('#addNewPizza_closeButton').click();
     showProducts();
 });
+
+
+
+
+let pizza = {};
+let side = {};
+
+function addToOrder_pizza(name){
+    pizza = products_pizzas.filter((e) => e.name === name).pop();
+    $('#addToOrder_name').text("Pizza: " + name);
+    $('#addToOrder_image').attr("src", pizza.img);
+    $('#addToOrder_image').attr("alt", pizza.name + " pizza");
+    $('#addToOrder_addButton_pizza').css("display", "block");
+}
+function addToOrder_side(name){
+    side = products_sides.filter((e) => e.name === name).pop();
+    $('#addToOrder_name').text(name);
+    $('#addToOrder_image').attr("src", side.img);
+    $('#addToOrder_image').attr("alt", side.name);
+    $('#addToOrder_price').text(side.price);
+    $('#addToOrder_sizeSelect').css("display", "none");
+    $('#addToOrder_addButton_side').css("display", "block");
+}
+
+function resetAddToOrderValues(){
+    $('#addToOrder_sizeSelect').prop("selectedIndex", 0);
+    $('#addToOrder_sizeSelect').css("display", "block");
+    $('#addToOrder_price').text("");
+    $('#addToOrder_addButton_pizza').css("display", "none");
+    $('#addToOrder_addButton_side').css("display", "none");
+}
+
+$('#addToOrder_cancelButton').click(resetAddToOrderValues);
+$('#addToOrder_closeButton').click(resetAddToOrderValues);
+
+$('#addToOrder_sizeSelect').change(function(){
+    $('#addToOrder_price').text(pizza.prices[parseInt($(this).val())]);
+});
+
+$('#addToOrder_addButton_pizza').click(function(){
+    order = getOrder();
+
+    let size;
+    switch($('#addToOrder_sizeSelect').val()){
+        case "0":
+            size = "Small";
+            break;
+        case "1":
+            size = "Medium";
+            break;
+        case "2":
+            size = "Large";
+            break;
+        default:
+            return alert("Select Size to add pizza!");
+    }
+
+    const product = order.filter((e) => e.name === pizza.name && e.size === size);
+    if(product.length > 0){
+        product[0].amount += 1;
+        replaceOrder(order.map((e) => e.name === product[0].name && e.size === size ? product[0] : e));
+        $('#addToOrder_closeButton').click();
+        return;
+    }
+
+    const obj = {};
+    obj.type = "pizza";
+    obj.name = pizza.name;
+    obj.size = size;
+    obj.price = parseInt($('#addToOrder_price').text());
+    obj.amount = 1;
+    obj.img = pizza.img;
+
+    addToOrder(obj);
+    $('#addToOrder_closeButton').click();
+});
+
+$('#addToOrder_addButton_side').click(function(){
+    order = getOrder();
+
+    const product = order.filter((e) => e.name === side.name);
+    if(product.length > 0){
+        product[0].amount += 1;
+        replaceOrder(order.map((e) => e.name === product[0].name ? product[0] : e));
+        $('#addToOrder_closeButton').click();
+        return;
+    }
+
+    const obj = {};
+    obj.type = "side";
+    obj.name = side.name;
+    obj.price = parseInt($('#addToOrder_price').text());
+    obj.amount = 1;
+    obj.img = side.img;
+
+    addToOrder(obj);
+    $('#addToOrder_closeButton').click();
+});
+
+console.log("order", order);
+
 

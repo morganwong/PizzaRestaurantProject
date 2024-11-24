@@ -35,9 +35,19 @@
     box-shadow: 3px 2px 34px -10px rgba(0,0,0,0.77);
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 .productCard:hover{
     scale: 1.02;
+}
+@media (max-width: 768px) {
+    .productCard{
+        margin-top: 70px;
+    }
+}
+.addToOrderButton{
+    border-radius: 0;
+    width: 100%;
 }
 
 
@@ -45,13 +55,46 @@
     width: 30%;
     display:table;
 }
-
-
 #addNewPizza_errorMessage{
     display: none;
     color: red;
 }
 
+
+#addToOrder_image{
+    width: 80%;
+    float: right;
+}
+@media (max-width: 768px) {
+    #addToOrder_image{
+        width: 100%;
+        float: none;
+    }
+}
+
+
+.orderSize{
+    margin-bottom: 2px;
+    font-style: italic;
+}
+.orderImage{
+    width: 100%;
+}
+
+
+
+.yourOrder{
+    border: 1px black solid;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bolder;
+}
+.yourOrder:hover{
+    /*background-color: gray;*/
+    -webkit-box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
+}
 
 
 
