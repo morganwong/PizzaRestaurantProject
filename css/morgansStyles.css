@@ -77,23 +77,27 @@
     margin-bottom: 2px;
     font-style: italic;
 }
+#orderQuantity{
+    width: 100%;
+}
 .orderImage{
     width: 100%;
 }
 
 
-
-.yourOrder{
-    border: 1px black solid;
-    border-radius: 20px;
-    background-color: white;
-    font-weight: bolder;
+@keyframes changeQuantity {
+    0% {
+        box-shadow: 0 0 3px lightblue;
+    }
+    50% {
+        box-shadow: 0 0 10px lightblue;
+    }
+    100% {
+        box-shadow: 0 0 3px lightblue;
+    }
 }
-.yourOrder:hover{
-    /*background-color: gray;*/
-    -webkit-box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
-    box-shadow: -1px 0px 8px -1px rgba(0,0,0,0.75);
+.flash{
+    animation: changeQuantity 1s;
 }
 
 
