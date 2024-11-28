@@ -303,7 +303,7 @@ $('#addToOrder_addButton_pizza').click(function(){
 
     const product = order.filter((e) => e.name === pizza.name && e.size === size);
     if(product.length > 0){
-        product[0].amount += 1;
+        product[0].amount = parseInt(product[0].amount) + 1;
         replaceOrder(order.map((e) => e.name === product[0].name && e.size === size ? product[0] : e));
         $('#addToOrder_closeButton').click();
         return;
@@ -326,7 +326,7 @@ $('#addToOrder_addButton_side').click(function(){
 
     const product = order.filter((e) => e.name === side.name);
     if(product.length > 0){
-        product[0].amount += 1;
+        product[0].amount = parseInt(product[0].amount) + 1;
         replaceOrder(order.map((e) => e.name === product[0].name ? product[0] : e));
         $('#addToOrder_closeButton').click();
         return;
