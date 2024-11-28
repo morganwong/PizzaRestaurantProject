@@ -83,6 +83,9 @@
 .orderImage{
     width: 100%;
 }
+.orderPrice{
+    margin: 20px;
+}
 
 
 @keyframes changeQuantity {
@@ -97,8 +100,9 @@
     }
 }
 .flash{
-    animation: changeQuantity 1s;
+    animation: changeQuantity 200ms;
 }
+
 
 
 

@@ -284,7 +284,7 @@ $('#addToOrder_sizeSelect').change(function(){
 });
 
 $('#addToOrder_addButton_pizza').click(function(){
-    order = getOrder();
+    const order = getOrder();
 
     let size;
     switch($('#addToOrder_sizeSelect').val()){
@@ -322,7 +322,7 @@ $('#addToOrder_addButton_pizza').click(function(){
 });
 
 $('#addToOrder_addButton_side').click(function(){
-    order = getOrder();
+    const order = getOrder();
 
     const product = order.filter((e) => e.name === side.name);
     if(product.length > 0){
@@ -343,6 +343,6 @@ $('#addToOrder_addButton_side').click(function(){
     $('#addToOrder_closeButton').click();
 });
 
-console.log("order", order);
+// console.log("order", getOrder());
 
 

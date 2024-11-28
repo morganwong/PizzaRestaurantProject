@@ -4,70 +4,85 @@
 
 // let order = localStorage.getItem("pizza_order_webdesignproject") === null ? [] : JSON.parse(localStorage.getItem("pizza_order_webdesignproject"));
 
+const pizza_order = "pizza_order_webdesignproject";
+
 function getOrder() {
-    return localStorage.getItem("pizza_order_webdesignproject") === null ? [] : JSON.parse(localStorage.getItem("pizza_order_webdesignproject"));
+    return localStorage.getItem(pizza_order) === null ? [] : JSON.parse(localStorage.getItem(pizza_order));
 }
 
-let order = getOrder();
-
 function addToOrder(obj) {
-    order.push(obj);
-    localStorage.setItem("pizza_order_webdesignproject", JSON.stringify(order));
+    localStorage.setItem(pizza_order, JSON.stringify(getOrder().push(obj)));
 }
 
 function replaceOrder(order) {
-    localStorage.setItem("pizza_order_webdesignproject", JSON.stringify(order));
-}
-
-function removeFromOrder(obj) {
-    order.filter((e) => e.name !== obj.name);
-    localStorage.setItem("pizza_order_webdesignproject", JSON.stringify(order));
+    localStorage.setItem(pizza_order, JSON.stringify(order));
 }
 
 //sure why would we let the user empty the basket, we want them to buy!
-function clearOrder() {
-    localStorage.removeItem("pizza_order_webdesignproject");
-}
+// function clearOrder() {
+//     localStorage.removeItem(pizza_order);
+// }
+
+
 
 function changeQuantity(quantity, name){
+    name = name.replace(/ /g, '');
     $("#" + name + "RowId").addClass("flash");
+
     const order = getOrder();
     const product = order.filter((e) => e.name === name);
     if(product.length > 0){
         product[0].amount = quantity;
         replaceOrder(order.map((e) => e.name === product[0].name ? product[0] : e));
     }
+
     setTimeout(function(){
         $("#" + name + "RowId").removeClass("flash")
-    }, 1000);
+    }, 200);
+
+    getOrderPrice();
 }
 
 function removeItem(name){
-    const order = getOrder();
-    replaceOrder(order.filter((e) => e.name !== name));
+    replaceOrder(getOrder().filter((e) => e.name !== name));
     doOrderModal();
 }
 
-// console.log("order", order);
+function getOrderPrice(){
+    let price = 0;
+    let p, item;
+    for(item of getOrder()){
+        p = item.price;
+        p = p * parseInt(item.amount);
+        price += p;
+    }
 
-// clearOrder();
+    if(price === 0){
+        $('#orderPrice').html("");
+    }else{
+        $('#orderPrice').html("<h4 class='orderPrice'>Total Price: €" + price + "</h4>");
+    }
+}
+
 
 
 $('#orderModal').on("shown.bs.modal", function () {
     doOrderModal();
 });
 
-
 function doOrderModal(){
     const order = getOrder();
     if(order.length === 0) {
-        return $('#orderModalBody').html("<p>You haven't added anything to your order yet</p>");
+        getOrderPrice();
+        return $('#orderModalBody').html("<h4>Your order is empty!</h4>");
     }
 
     let body = "";
+    let name;
     for (const item of order) {
+        name = item.name.replace(/ /g, "");
         body += `
-            <div class="row" id="${item.name}RowId">
+            <div class="row" id="${name}RowId">
                 <div class="col-md-5 align-self-center">
                     <h5 id="order_name">${item.name}</h5>
                     <p id="order_size" class="orderSize">${item.type === "pizza" ? item.size : ""}</p>
@@ -88,6 +103,7 @@ function doOrderModal(){
         `;
     }
     $('#orderModalBody').html(body);
+    getOrderPrice();
 }
 
 
