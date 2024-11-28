@@ -11,7 +11,9 @@ function getOrder() {
 }
 
 function addToOrder(obj) {
-    localStorage.setItem(pizza_order, JSON.stringify(getOrder().push(obj)));
+    const order = getOrder();
+    order.push(obj);
+    localStorage.setItem(pizza_order, JSON.stringify(order));
 }
 
 function replaceOrder(order) {
@@ -26,8 +28,8 @@ function replaceOrder(order) {
 
 
 function changeQuantity(quantity, name){
-    name = name.replace(/ /g, '');
-    $("#" + name + "RowId").addClass("flash");
+    const nameId = name.replace(/ /g, '');
+    $("#" + nameId + "RowId").addClass("flash");
 
     const order = getOrder();
     const product = order.filter((e) => e.name === name);
@@ -37,7 +39,7 @@ function changeQuantity(quantity, name){
     }
 
     setTimeout(function(){
-        $("#" + name + "RowId").removeClass("flash")
+        $("#" + nameId + "RowId").removeClass("flash")
     }, 200);
 
     getOrderPrice();

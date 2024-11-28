@@ -100,7 +100,7 @@ function populatePizzas(){
                         <h5>${pizza.name}</h5>
                         <p>${pizza.description}</p>
                         <p>Sizes: ${pizza.sizes}</p>
-                        <p><strong>Price</strong>: ${pizza.prices}</p>
+                        <p><strong>Price</strong>: € ${pizza.prices}</p>
                     </div>
                 </div>
                 <button 
@@ -144,7 +144,7 @@ function populateSides(){
                     <div class="card-body">
                         <h5>${side.name}</h5>
                         <p>${side.description}</p>
-                        <p><strong>Price</strong>: ${side.price}</p>
+                        <p><strong>Price</strong>: € ${side.price}</p>
                     </div>
                 </div>
                 <button 
