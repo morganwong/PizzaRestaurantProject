@@ -1,0 +1,113 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  background-image: url(background-image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+.header {
+  background-color: #dc3545;
+  color: white;
+  padding: 1rem;
+}
+
+.Resuraunt-Name {
+  font: size 4rem;
+}
+
+.Page-Nav .Page-Link {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.Page-Nav .Page-Link:hover {
+  text-decoration: underline;
+}
+
+.Customer-Message {
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.Contact-Form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.form-heading {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-description {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.footer {
+  background-color: #dc3545;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.Location-Page-Layout {
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.Opening-Closing {
+  font-size: 1.4rem; 
+}
+
+.Opening-Closing h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Opening-Closing ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.Opening-Closing ul li {
+  margin-bottom: 8px;
+}
+
+.Map-Location {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Map-Location h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Map-Location p {
+  font-size: 1.2rem;
+}
+
+.Map-Container {
+  position: relative;
+  height: 400px; 
+}
+
+.Map-Container iframe {
+  width: 100%;
+  height: 100%;
+}
+

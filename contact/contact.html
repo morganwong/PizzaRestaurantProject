@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Bootstrap & CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+    <body>
+ <!-- Header -->
+  <header class="header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="Resuraunt-Name">Perfecto Pizza </h1> <i class="fa-sharp fa-regular fa-pizza"></i>
+      <nav class="Page-Nav">
+  
+        <a href="../location/location.html"class="Page-Link">Location</a>
+        <a href="contact.html"class="Page-Link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Customer message -->
+  <main class="Customer-Message">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 Contact-Form-container">
+          <h2 class="form-heading">Contact Us</h2>
+          <p class="form-description">We would appreciate any feedback that you might have! Please fill out the form below.</p>
+          
+          <!-- Contact Form -->
+          <form id="Contact-Form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+          </form>
+
+          <!-- Customer confirmation Message -->
+          <div id="confirmationMessage" class="alert alert-success mt-4 d-none"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer with Rights reserved -->
+  <footer class="footer">
+    &copy; 2024 Perfecto Pizza | All rights reserved.
+  </footer>
+
+  <!-- Bootstrap Link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Javascript link-->
+  <script src="Script.js"></script>
+</body>
+</html>
