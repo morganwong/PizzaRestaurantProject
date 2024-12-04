@@ -12,6 +12,15 @@ body{
     font-size: xx-large;
     font-weight: bolder;
 }
+.navbarStyles{
+    justify-content: end;
+}
+.navbarStyles ul{
+    float: right !important;
+}
+.navbarStyles a{
+    font-weight: bolder;
+}
 .footerStyles{
     background-color: #dc3545;
 }
