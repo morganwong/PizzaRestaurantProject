@@ -32,7 +32,7 @@ body {
 }
 
 .Customer-Message {
-  background-color: #f8f9fa;
+  /*background-color: #f8f9fa;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +63,7 @@ body {
   padding: 1rem;
 }
 .Location-Page-Layout {
-  background-color: #f8f9fa;
+  /*background-color: #f8f9fa;*/
   display: flex;
   align-items: center;
   justify-content: center;

@@ -10,3 +10,9 @@
 .rating-stars {
     color: #ffcc00;
 }
+
+#add-review{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #fff
+}
