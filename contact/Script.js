@@ -1,16 +1,15 @@
-//When Submit is pressed by customer
-document.getElementById("Contact-Form").onsubmit = function(event) {
-  event.preventDefault(); 
+// When Submit is pressed by customer
+$("#Contact-Form").submit(function(event) {
+  event.preventDefault(); // Prevent the default form submission
 
-  // Get customers name 
-  var name = document.getElementById("name").value;
+  // Get customer's name
+  var name = $("#name").val();
 
   // Customer thank you message
-  var confirmationMessage = document.getElementById("confirmationMessage");
-  confirmationMessage.textContent = "Hi " + name + ". Thank you for contacting us! Your message has been recieved. Our Perfecto Pizza team will contact you soon!";
-  confirmationMessage.classList.remove("d-none");  // Make the confirmation message visible
+  var confirmationMessage = $("#confirmationMessage");
+  confirmationMessage.text("Hi " + name + ". Thank you for contacting us! Your message has been received. Our Perfecto Pizza team will contact you soon!");
+  confirmationMessage.removeClass("d-none"); 
 
-  // Reset
-  document.getElementById("Contact-Form").reset();
-};
-
+  // Reset the form
+  $("#Contact-Form")[0].reset();
+});
