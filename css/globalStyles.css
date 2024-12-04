@@ -1,0 +1,17 @@
+body{
+    background-image: url('../contact/background-image.webp');
+    background-color: rgba(255,255,255,0.7);
+    background-blend-mode: lighten;
+}
+.headerStyles{
+    background-color: #dc3545 !important;
+}
+.nameHeader{
+    margin-left: 25px;
+    font-family: 'fantasy',serif;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.footerStyles{
+    background-color: #dc3545;
+}
