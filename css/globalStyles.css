@@ -27,3 +27,18 @@ body{
 .footerStyles{
     background-color: #dc3545;
 }
+
+
+.orderSize{
+    margin-bottom: 2px;
+    font-style: italic;
+}
+#orderQuantity{
+    width: 100%;
+}
+.orderImage{
+    width: 100%;
+}
+.orderPrice{
+    margin: 20px;
+}
