@@ -21,6 +21,9 @@ body{
 .navbarStyles a{
     font-weight: bolder;
 }
+.navbarStyles button{
+    font-weight: bolder;
+}
 .footerStyles{
     background-color: #dc3545;
 }
