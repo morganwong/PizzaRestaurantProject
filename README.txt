@@ -33,7 +33,7 @@ Desktop -
 
 https://morganwong.github.io/PizzaRestaurantProject/menu.html
 Mobile  -
-    Performance -   70
+    Performance -   91
     Accessibility   -   93
     Best Practices  -   96
     SEO -   100
@@ -44,14 +44,34 @@ Desktop -
     SEO -   100
 
 https://morganwong.github.io/PizzaRestaurantProject/catering/index.html
+Mobile  -
+    Performance -   91
+    Accessibility   -   93
+    Best Practices  -   96
+    SEO -   100
+Desktop -
+    Performance -   100
+    Accessibility   -   91
+    Best Practices  -   96
+    SEO -   100
 
 
 https://morganwong.github.io/PizzaRestaurantProject/review/index.html
+Mobile  -
+    Performance -   94
+    Accessibility   -   93
+    Best Practices  -   100
+    SEO -   100
+Desktop -
+    Performance -   100
+    Accessibility   -   90
+    Best Practices  -   100
+    SEO -   100
 
 
 https://morganwong.github.io/PizzaRestaurantProject/location/location.html
 Mobile  -
-    Performance -   83
+    Performance -   79
     Accessibility   -   90
     Best Practices  -   100
     SEO -   100
@@ -63,12 +83,12 @@ Desktop -
 
 https://morganwong.github.io/PizzaRestaurantProject/contact/contact.html
 Mobile  -
-    Performance -   98
+    Performance -   95
     Accessibility   -   95
     Best Practices  -   100
     SEO -   100
 Desktop -
-    Performance -   99
+    Performance -   100
     Accessibility   -   93
     Best Practices  -   100
     SEO -   100
