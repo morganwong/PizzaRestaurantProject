@@ -7,6 +7,7 @@ body{
     background-color: #dc3545 !important;
 }
 .nameHeader{
+    color: aliceblue;
     margin-left: 25px;
     font-family: 'fantasy',serif;
     font-size: xx-large;
@@ -18,17 +19,18 @@ body{
 .navbarStyles ul{
     float: right !important;
 }
+.navbarStyles button,
 .navbarStyles a{
-    font-weight: bolder;
-}
-.navbarStyles button{
+    color: aliceblue !important;  
     font-weight: bolder;
 }
 .footerStyles{
     background-color: #dc3545;
 }
-
-
+.footerStyles p, 
+.footerStyles a {
+    color: aliceblue !important;  
+}
 .orderSize{
     margin-bottom: 2px;
     font-style: italic;
