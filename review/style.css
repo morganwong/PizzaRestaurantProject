@@ -10,10 +10,8 @@
 .rating-stars {
     color: #ffcc00;
 }
-form#review-form{
+#review-form{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-bottom: 25px;
-    border: 1px solid #ddd;
-    background-color: white !important;
     border-radius: 5px;
 }
