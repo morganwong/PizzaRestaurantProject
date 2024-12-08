@@ -237,7 +237,7 @@ $('#addNewPizza_addButton').click(function(){
         description: description,
         sizes: "S, M, L",
         prices: prices,
-        img: "img/pizza_margherita.webp"
+        img: "../img/pizza_margherita.webp"
     });
 
     populatePizzas();
