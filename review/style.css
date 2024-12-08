@@ -1,5 +1,5 @@
 .review-card {
-    background-color: #fff;
+    background-color: white;
     border: 1px solid #ddd;
     height: 180px;
     border-radius: 5px;
@@ -14,5 +14,5 @@
 #add-review{
     padding-top: 25px;
     padding-bottom: 25px;
-    background-color: #fff
+    background-color: white
 }
