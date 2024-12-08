@@ -4,35 +4,35 @@ var products_pizzas = [
         description: "A classic. Simple, yet refined. Cooked in an oven, and put in box or on a plate... or just thrown directly at your face.",
         sizes: "S, M, L",
         prices: [8, 13, 18],
-        img: "img/pizza_margherita.webp"
+        img: "../img/pizza_margherita.webp"
     },
     {
         name: "Pepperoni",
         description: "A classic. Simple, but not as simple as a margherita. Who was it that first put spicy meat on a cheese covered slab of bread? Woe upon he, that questioned it!",
         sizes: "S, M, L",
         prices: [10, 15, 20],
-        img: "img/pizza_pepperoni.webp"
+        img: "../img/pizza_pepperoni.webp"
     },
     {
         name: "Hawaiian",
         description: "There's pineapple on this one.. We may not like it. Or condone it. Or recommend it. But the lonely and degenerate need to eat too.",
         sizes: "S, M, L",
         prices: [6, 11, 16],
-        img: "img/pizza_hawaiian.webp"
+        img: "../img/pizza_hawaiian.webp"
     },
     {
         name: "BBQ Chicken",
         description: "Apparently people put bbq sauce on pizza instead of the classic tomato? Who do these people think they are?!",
         sizes: "S, M, L",
         prices: [10, 15, 20],
-        img: "img/pizza_bbqchicken.webp"
+        img: "../img/pizza_bbqchicken.webp"
     },
     {
         name: "Pesto and Tomato",
         description: "Like that Dr Oetker one, but even more expensive!",
         sizes: "S, M, L",
         prices: [15, 20, 25],
-        img: "img/pizza_pesto.webp"
+        img: "../img/pizza_pesto.webp"
     }
 ];
 
@@ -41,19 +41,19 @@ var products_sides = [
         name: "Garlic Bread",
         description: "Who can resist the classic?",
         price: 7.50,
-        img: "img/garlicbread.webp"
+        img: "../img/garlicbread.webp"
     },
     {
         name: "Garlic Bread with Cheese",
         description: "The one thing that could make garlic EVEN BETTER!",
         price: 9.50,
-        img: "img/garlicbread_cheese.webp"
+        img: "../img/garlicbread_cheese.webp"
     },
     {
         name: "Chicken Wings",
         description: "We bought these in Aldi for 2.50 and we're gonna charge you over 10 euro",
         price: 10.50,
-        img: "img/chickenwings.webp"
+        img: "../img/chickenwings.webp"
     }
 ];
 
