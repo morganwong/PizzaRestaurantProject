@@ -96,7 +96,7 @@ function doOrderModal(){
                     <p style="margin-top: 5px;"></p>
                 </div>
                 <div class="col-md-3 align-self-center">
-                    <img src=${item.img} alt="${item.name} pizza" class="orderImage" id="order_image" onError="this.src = '../${item.img}'" />
+                    <img src=${item.img} alt="${item.name} pizza" class="orderImage" id="order_image" onError="this.src = '${item.img.substring(3)}'" />
                 </div>
                 <div class="col-md-2 align-self-center">
                     <button class="btn" onclick="removeItem('${item.name}')"><i class="fa fa-trash"></i></button>
