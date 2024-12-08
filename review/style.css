@@ -11,8 +11,7 @@
     color: #ffcc00;
 }
 
-form#review-form{
+#review-form{
     padding: 25px;
-    background-color: white !important;
     border: 1px solid #ccc; 
 }
